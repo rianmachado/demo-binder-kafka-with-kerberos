@@ -106,7 +106,7 @@ public interface SampleEventBindingService {
 
 }
 ```
-**Autenticando no Kerberos**
+**Conexões seguras(SASL_SSL) entre client e brokers**
 ```xml
 spring.cloud.stream:
   defaultBinder: kafka1
