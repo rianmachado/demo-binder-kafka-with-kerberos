@@ -1,0 +1,35 @@
+COMANDOS KERBEROS
+
+/usr/sbin/kadmin.local -q 'addprinc -randkey kafka/krb5.ahmad.io@AHMAD.IO'
+/usr/sbin/kadmin.local -q "ktadd -k /etc/security/keytabs/kafka_server.keytab kafka/krb5.ahmad.io@AHMAD.IO"
+
+export KAFKA_OPTS="-Djava.security.krb5.conf=/etc/krb5.conf -Djava.security.auth.login.config=/home/rian/kafka_2.12-2.8.0/config/kafka_server_jaas.conf"
+
+
+-Djava.security.auth.login.config=/etc/kafka/kafka_client_jaas.conf
+
+
+KafkaServer { 
+    com.sun.security.auth.module.Krb5LoginModule required
+    useKeyTab=true 
+    storeKey=true 
+    keyTab="/etc/security/keytabs/kafka_server.keytab" 
+    principal="kafka/krb5.ahmad.io@AHMAD.IO"; 
+}; 
+client{
+    com.sun.security.auth.module.Krb5LoginModule required
+    useKeyTab=true
+    storeKey=true
+    keyTab="/etc/security/keytabs/kafka_server.keytab"
+    principal="kafka/krb5.ahmad.io@AHMAD.IO"; 
+};
+
+
+KafkaClient {
+    com.sun.security.auth.module.Krb5LoginModule required
+    useTicketCache=true
+    useKeyTab=true
+    storeKey=true
+    keyTab="/etc/security/keytabs/kafka_server.keytab"
+    principal="kafka/krb5.ahmad.io@AHMAD.IO";
+};

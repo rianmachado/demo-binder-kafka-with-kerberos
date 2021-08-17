@@ -1,0 +1,53 @@
+spring.cloud.stream:
+  defaultBinder: kafka1
+  binders:
+    kafka1:
+      type: kafka
+      environment:
+        spring:
+          kafka:
+            bootstrap-servers: krb5.ahmad.io:9092
+            jaas:
+              enabled: true
+              options:
+                useKeyTab: true
+                #keyTab: /Users/rian/Downloads/demo/kafka_server.keytab
+                keyTab: /etc/security/keytabs/kafka_server.keytab
+                storeKey: true
+                useTicketCache: false
+                serviceName: kafka
+                principal: kafka/krb5.ahmad.io@AHMAD.IO
+              control-flag: required
+            properties:
+              security:
+                protocol: SASL_PLAINTEXT
+              sasl:
+                mechanism: GSSAPI
+                kerberos:
+                  service:
+                    name: kafka
+                   
+instanceCount: 1
+instanceIndex: 0
+bindingRetryInterval: 0
+bindings.masterOutput:
+  destination: demo
+  binder: kafka1
+  group: group1
+  contentType: application/json
+  producer.partitionKeyExpression: payload.id
+  producer.partitionCount: 1
+  producer.requiredGroups: group1
+bindings.masterInput:
+  destination: demo
+  binder: kafka1
+  group: group1
+  contentType: application/json
+  consumer.concurrency: 10
+  consumer.partitioned: true
+  consumer.maxAttempts: 3
+  consumer.backOffInitialInterval: 1000
+  consumer.backOffMaxInterval: 10000
+  
+  
+  
