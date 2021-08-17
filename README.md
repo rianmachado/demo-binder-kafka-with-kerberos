@@ -2,6 +2,8 @@
 
 Aplicativos Spring Cloud Stream consistem em um núcleo neutro de middleware. O Aplicativo se comunica com o mundo externo por meio de canais de entrada e saída injetados pelo Spring Cloud Stream. Esses canais são conectados ao brokers externos por meio de implementações de Binder. 
 
+![](https://docs.spring.io/spring-cloud-stream/docs/1.0.0.RC1/reference/html/images/SCSt-with-binder.png)
+
 ```xml
 bindings.masterOutput:
   destination: demo
