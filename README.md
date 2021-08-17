@@ -23,7 +23,7 @@ Arquivo que contém pares de principais do Kerberos e chaves criptografadas (que
 
 ```
 
-**Segurança Apache Kafka com Kerberos**</br>
+# Segurança Apache Kafka com Kerberos
 Apache Kafka é uma camada intermediária interna que permite que seus sistemas de back-end compartilhem feeds de dados em tempo real uns com os outros por meio de tópicos Kafka. Com uma configuração padrão do Kafka, qualquer usuário ou aplicativo pode escrever qualquer mensagem em qualquer tópico, bem como ler dados de qualquer tópico . Conforme sua empresa avança em direção a um modelo de locação compartilhado, onde várias equipes e aplicativos usam o mesmo Kafka Cluster, ou seu Kafka Cluster começa a embarcar algumas informações críticas e confidenciais, você precisa implementar a segurança.
 
 **SASL GSSAPI** é baseado no mecanismo de tíquete Kerberos, uma forma muito segura de fornecer autenticação. O Microsoft Active Directory é a implementação mais comum do Kerberos. SASL/GSSAPI é uma ótima escolha, pois permite que as empresas gerenciem a segurança a partir de seu servidor Kerberos.
@@ -64,8 +64,7 @@ sasl.enabled.mechanism=GSS
 ```
 
 
-**Aplicativos Spring Cloud Stream** </br>
-
+# Aplicativos Spring Cloud Stream
 Consistem em um núcleo neutro de middleware. O Aplicativo se comunica com o mundo externo por meio de canais de entrada e saída injetados pelo Spring Cloud Stream. Esses canais são conectados ao brokers externos por meio de implementações de Binder.
 
 ![](https://docs.spring.io/spring-cloud-stream/docs/1.0.0.RC1/reference/html/images/SCSt-with-binder.png)
@@ -136,3 +135,11 @@ spring.cloud.stream:
                   service:
                     name: kafka
 ```
+
+# Referências
+https://www.gta.ufrj.br/grad/99_2/marcos/kerberos.htm#introd
+https://www.howtoforge.com/how-to-setup-kerberos-server-and-client-on-ubuntu-1804-lts/
+https://linuxconfig.org/how-to-install-kerberos-kdc-server-and-client-on-ubuntu-18-04
+https://medium.com/xenonstack-security/apache-kafka-security-with-kerberos-on-kubernetes-1a10d378b35d
+https://docs.confluent.io/2.0.0/kafka/sasl.html
+
