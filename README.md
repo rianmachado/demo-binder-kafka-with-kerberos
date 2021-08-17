@@ -54,6 +54,15 @@ KafkaClient {
 ```xml
 export KAFKA_OPTS="-Djava.security.krb5.conf=/etc/krb5.conf -Djava.security.auth.login.config=/home/rian/kafka_2.12-2.8.0/config/kafka_server_jaas.conf"
 ```
+- Configurando SASL in <KAFKA_HOME>/config/server.properties
+```xml
+listeners=SASL_PLAINTEXT://krb5.ahmad.io:9092
+security.inter.broker.protocol=SASL_PLAINTEXT
+sasl.kerberos.service.name=kafka
+sasl.mechanism.inter.broker.protocol=GSSAPI
+sasl.enabled.mechanism=GSS
+```
+
 
 **Aplicativos Spring Cloud Stream** </br>
 
@@ -96,5 +105,34 @@ public interface SampleEventBindingService {
 	MessageChannel masterOutput();
 
 }
-
+```
+**Autenticando no Kerberos**
+```xml
+spring.cloud.stream:
+  defaultBinder: kafka1
+  binders:
+    kafka1:
+      type: kafka
+      environment:
+        spring:
+          kafka:
+            bootstrap-servers: krb5.ahmad.io:9092
+            jaas:
+              enabled: true
+              options:
+                useKeyTab: true
+                keyTab: /etc/security/keytabs/kafka_server.keytab
+                storeKey: true
+                useTicketCache: false
+                serviceName: kafka
+                principal: kafka/krb5.ahmad.io@AHMAD.IO
+              control-flag: required
+            properties:
+              security:
+                protocol: SASL_PLAINTEXT
+              sasl:
+                mechanism: GSSAPI
+                kerberos:
+                  service:
+                    name: kafka
 ```
