@@ -137,9 +137,9 @@ spring.cloud.stream:
 ```
 
 # Referências
-https://www.gta.ufrj.br/grad/99_2/marcos/kerberos.htm#introd
-https://www.howtoforge.com/how-to-setup-kerberos-server-and-client-on-ubuntu-1804-lts/
-https://linuxconfig.org/how-to-install-kerberos-kdc-server-and-client-on-ubuntu-18-04
-https://medium.com/xenonstack-security/apache-kafka-security-with-kerberos-on-kubernetes-1a10d378b35d
-https://docs.confluent.io/2.0.0/kafka/sasl.html
+* https://www.gta.ufrj.br/grad/99_2/marcos/kerberos.htm#introd
+* https://www.howtoforge.com/how-to-setup-kerberos-server-and-client-on-ubuntu-1804-lts/
+* https://linuxconfig.org/how-to-install-kerberos-kdc-server-and-client-on-ubuntu-18-04
+* https://medium.com/xenonstack-security/apache-kafka-security-with-kerberos-on-kubernetes-1a10d378b35d
+* https://docs.confluent.io/2.0.0/kafka/sasl.html
 
