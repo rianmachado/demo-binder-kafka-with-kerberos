@@ -15,8 +15,7 @@ O ticket deve conter informações que garantam a identidade do usuário. Como u
 Para conhecer detalhes de como configurar um servidor Kerberos acesse: [Setup](https://www.howtoforge.com/how-to-setup-kerberos-server-and-client-on-ubuntu-1804-lts/).
 
 **Keytab**</br>
-Arquivo que contém pares de principais do Kerberos e chaves criptografadas (que são derivadas da senha do Kerberos). Você pode usar um arquivo keytab para autenticar em vários sistemas remotos usando Kerberos sem inserir uma senha. No entanto, ao alterar sua senha Kerberos, você precisará recriar todos os seus keytabs.
-
+Arquivo que contém o Kerberos Principal(identidade única) e chaves criptografadas que são derivadas da senha do Kerberos. Você pode usar um arquivo keytab para se autenticar em vários sistemas remotos usando Kerberos sem inserir uma senha. No entanto, ao alterar sua senha Kerberos, você precisará recriar todos os seus keytabs.
 ```xml
 /usr/sbin/kadmin.local -q 'addprinc -randkey kafka/krb5.ahmad.io@AHMAD.IO'
 /usr/sbin/kadmin.local -q "ktadd -k /etc/security/keytabs/kafka_server.keytab kafka/krb5.ahmad.io@AHMAD.IO"
@@ -24,9 +23,9 @@ Arquivo que contém pares de principais do Kerberos e chaves criptografadas (que
 ```
 
 # Segurança Apache Kafka com Kerberos
-Apache Kafka é uma camada intermediária interna que permite que seus sistemas de back-end compartilhem feeds de dados em tempo real uns com os outros por meio de tópicos Kafka. Com uma configuração padrão do Kafka, qualquer usuário ou aplicativo pode escrever qualquer mensagem em qualquer tópico, bem como ler dados de qualquer tópico . Conforme sua empresa avança em direção a um modelo de locação compartilhado, onde várias equipes e aplicativos usam o mesmo Kafka Cluster, ou seu Kafka Cluster começa a embarcar algumas informações críticas e confidenciais, você precisa implementar a segurança.
+Apache Kafka é uma camada intermediária interna que permite aos sistemas de back-end compartilharem dados em tempo real por meio de tópicos. A configuração padrão do Kafka, permite que qualquer usuário ou aplicativo possa escrever mensagens em qualquer tópico, bem como ler dados. Conforme sua empresa avança em direção a um modelo onde várias equipes e aplicativos usam o mesmo Kafka Cluster, algumas informações críticas e confidenciais ganham protagonismo. Você precisa implementar a segurança.
 
-**SASL GSSAPI** é baseado no mecanismo de tíquete Kerberos, uma forma muito segura de fornecer autenticação. O Microsoft Active Directory é a implementação mais comum do Kerberos. SASL/GSSAPI é uma ótima escolha, pois permite que as empresas gerenciem a segurança a partir de seu servidor Kerberos.
+**SASL/GSSAPI** é uma ótima escolha, pois permite que as empresas gerenciem a segurança a partir de seu servidor Kerberos.
 
 - Adicione um arquivo JAAS(<KAFKA_HOME>/config/kafka_server_jaas.conf) apontando para o keytab criado:
 
