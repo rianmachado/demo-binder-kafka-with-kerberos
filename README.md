@@ -171,10 +171,10 @@ spring.cloud.stream:
 2021-08-17 20:34:11.411  INFO 17185 --- [  restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: kafka1
 2021-08-17 20:34:11.488  INFO 17185 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
 2021-08-17 20:34:11.553  INFO 17185 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-<b>2021-08-17 20:34:12.090  INFO 17185 --- [  restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: kafka1
+2021-08-17 20:34:12.090  INFO 17185 --- [  restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: kafka1
 2021-08-17 20:34:12.091  INFO 17185 --- [  restartedMain] o.s.c.s.binder.DefaultBinderFactory      : Retrieving cached binder: kafka1
 2021-08-17 20:34:12.345  INFO 17185 --- [  restartedMain] o.s.c.s.b.k.p.KafkaTopicProvisioner      : Using kafka topic for outbound: masterOutput
-2021-08-17 20:34:12.355  INFO 17185 --- [  restartedMain] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: </b>
+2021-08-17 20:34:12.355  INFO 17185 --- [  restartedMain] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values:
 	bootstrap.servers = [krb5.ahmad.io:9092]
 	client.dns.lookup = default
 	client.id = 
@@ -224,8 +224,8 @@ spring.cloud.stream:
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-<b>2021-08-17 20:34:12.632  INFO 17185 --- [  restartedMain] o.a.k.c.s.authenticator.AbstractLogin    : Successfully logged in.
-2021-08-17 20:34:12.644  INFO 17185 --- [mad.io@AHMAD.IO] o.a.k.c.security.kerberos.KerberosLogin  : [Principal=kafka/krb5.ahmad.io@AHMAD.IO]: TGT refresh thread started.</b>
+2021-08-17 20:34:12.632  INFO 17185 --- [  restartedMain] o.a.k.c.s.authenticator.AbstractLogin    : Successfully logged in.
+2021-08-17 20:34:12.644  INFO 17185 --- [mad.io@AHMAD.IO] o.a.k.c.security.kerberos.KerberosLogin  : [Principal=kafka/krb5.ahmad.io@AHMAD.IO]: TGT refresh thread started.
 2021-08-17 20:34:12.664  INFO 17185 --- [mad.io@AHMAD.IO] o.a.k.c.security.kerberos.KerberosLogin  : [Principal=kafka/krb5.ahmad.io@AHMAD.IO]: TGT valid starting at: Tue Aug 17 20:34:12 UTC 2021
 2021-08-17 20:34:12.665  INFO 17185 --- [mad.io@AHMAD.IO] o.a.k.c.security.kerberos.KerberosLogin  : [Principal=kafka/krb5.ahmad.io@AHMAD.IO]: TGT expires: Wed Aug 18 06:34:12 UTC 2021
 2021-08-17 20:34:12.667  INFO 17185 --- [mad.io@AHMAD.IO] o.a.k.c.security.kerberos.KerberosLogin  : [Principal=kafka/krb5.ahmad.io@AHMAD.IO]: TGT refresh sleeping until: Wed Aug 18 05:04:04 UTC 2021
