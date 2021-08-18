@@ -135,6 +135,10 @@ spring.cloud.stream:
                   service:
                     name: kafka
 ```
+```xml
+c
+```
+
 
 # Referências
 * https://www.gta.ufrj.br/grad/99_2/marcos/kerberos.htm#introd
