@@ -23,7 +23,7 @@ Arquivo que contém o Kerberos Principal(identidade única) e chaves criptografa
 ```
 
 # Segurança Apache Kafka com Kerberos
-Apache Kafka é uma camada intermediária interna que permite aos sistemas de back-end compartilharem dados em tempo real por meio de tópicos. A configuração padrão do Kafka, permite que qualquer usuário ou aplicativo possa escrever mensagens em qualquer tópico, bem como ler dados. Conforme sua empresa avança em direção a um modelo onde várias equipes e aplicativos usam o mesmo Kafka Cluster, algumas informações críticas e confidenciais ganham protagonismo. Você precisa implementar a segurança. **SASL/GSSAPI**é uma ótima escolha, pois permite que as empresas gerenciem a segurança a partir de seu servidor Kerberos.
+Apache Kafka é uma camada intermediária interna que permite aos sistemas de back-end compartilharem dados em tempo real por meio de tópicos. A configuração padrão do Kafka, permite que qualquer usuário ou aplicativo possa escrever mensagens em qualquer tópico, bem como ler dados. Conforme sua empresa avança em direção a um modelo onde várias equipes e aplicativos usam o mesmo Kafka Cluster, algumas informações críticas e confidenciais ganham protagonismo. Você precisa implementar a segurança. **SASL/GSSAPI** é uma ótima escolha, pois permite que as empresas gerenciem a segurança a partir de seu servidor Kerberos.
 
 - Adicione um arquivo JAAS(<KAFKA_HOME>/config/kafka_server_jaas.conf) apontando para o keytab criado:
 
